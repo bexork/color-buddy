@@ -1,0 +1,26 @@
+{
+  "name": "starkeeper-color-buddy",
+  "version": "1.0.0",
+  "description": "This tool will generate gradient color palettes for CSS and Javascript, and create .png previews of palettes",
+  "main": "index.js",
+  "scripts": {
+    "test": "TESTING IS FOR THE WEAK"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bexork/color-buddy.git"
+  },
+  "keywords": [
+    "javascript",
+    "css",
+    "buddy",
+    "starkeeper",
+    "bexork"
+  ],
+  "author": "bexork@starkeeper.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bexork/color-buddy/issues"
+  },
+  "homepage": "https://github.com/bexork/color-buddy#readme"
+}

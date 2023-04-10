@@ -1,4 +1,4 @@
-const colorSet = {
+export const colorSet = {
   white: 0,
   black: 1,
   baseIndex: 2,
@@ -148,7 +148,7 @@ const colorSet = {
   ]
 }
 
-const neon = {
+export const neon = {
   yellow: ['#FFFF00', '#FFFF33', '#F2EA02', '#E6FB04'],
   red: ['#FF0000', '#FD1C03', '#FF3300', '#FF6600'],
   green: ['#00FF00', '#00FF33', '#00FF66', '#33FF00'],
@@ -157,7 +157,7 @@ const neon = {
   purple: ['#9D00FF', '#CC00FF', '#6E0DD0', '#9900FF']
 }
 
-const neonLights = {
+export const neonLights = {
   yellow: ['#FFFF00', '#FFFF88', '#FFFF44', '#FFFF22'],
   red: ['#FF0000', '#FF00EE', '#FF00DD', '#FF00CC'],
   green: ['#00FF00', '#00FF33', '#00FF66', '#33FF00'],
@@ -165,7 +165,7 @@ const neonLights = {
   pink: ['#FF00FF', '#FF0088', '#FF0044', '#FF0022']
 }
 
-const neonRoots = {
+export const neonRoots = {
   red: {
     base: '#FF0000',
     mask: 0
@@ -180,7 +180,7 @@ const neonRoots = {
   }
 }
 
-const createNeons = (neonRoot, size) => {
+export const createNeons = (neonRoot, size) => {
   const { mask, base } = neonRoot
   const result = []
   const stepSize = 255 / size
@@ -205,7 +205,7 @@ const createNeons = (neonRoot, size) => {
   return result
 }
 
-const generateNeonCSS = size => {
+export const generateNeonCSS = size => {
   const lines = []
   const count = 0
   for (const color of Object.keys(neonRoots)) {
@@ -218,7 +218,7 @@ const generateNeonCSS = size => {
   return lines.join('\r')
 }
 
-const colorNames = [
+export const colorNames = [
   'gray',
   'red',
   'pink',
@@ -251,7 +251,23 @@ const {
 
 colorSet.numGradients = (colorSet.palette.length - 2) / 10
 
-const randomColor = (min, max, exclude = null) => {
+//const mulberry32 = seed => {
+//  return () => {
+//    let t = (seed += 0x6d2b79f5)
+//    t = Math.imul(t ^ (t >>> 15), t | 1)
+//    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+//    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+//  }
+//}
+//
+////const MULBERRY32 = mulberry32(new Date().getTime())
+//const MULBERRY32 = Math.random
+
+function RND(max) {
+  return Math.floor(Math.random() * max)
+}
+
+export const randomColor = (min, max, exclude = null) => {
   const maxPaletteIndex = colorSet.palette.length / colorSet.paletteSize
   const colorIndex = RND(max - min) + min
 
@@ -292,7 +308,7 @@ const randomColor = (min, max, exclude = null) => {
   }
 }
 
-const randomLinearGradient = numStops => {
+export const randomLinearGradient = numStops => {
   const degree = RND(360)
   const css = [`linear-gradient(${degree}deg`]
 

@@ -1,10 +1,11 @@
 {
-  "name": "starkeeper-color-buddy",
+  "name": "@starkeeper.io/starkeeper-color-buddy",
   "version": "1.0.0",
   "description": "This tool will generate gradient color palettes for CSS and Javascript, and create .png previews of palettes",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm start"
+    "start": "node ./src/index.js"
   },
   "repository": {
     "type": "git",
